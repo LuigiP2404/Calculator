@@ -4,7 +4,6 @@
  1 = SOTTRAZIONE
  2 = DIVISIONE
  3 = MOLTIPLICAZIONE
- 4 = UGUALE
 */
 
 const app = Vue.createApp({
