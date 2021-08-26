@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="Img/logobianco.png">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Spartan:wght@700&display=swap" rel="stylesheet"> 
+  <title>Luigi Paglionico | Calcolatrice </title>
+</head>
+<body>
+  <div id="app">
+    <div class="calcolatrice">
+      <div class="intro-row">
+        <p>Calcolatrice</p>
+        <p>Tema</p>
+      </div>
+      <div class="result-row" v-if="showResult">
+        {{ result }}
+      </div>
+      <div class="result-row" v-if="showFinal">
+        {{ finalResult }}
+      </div>
+      <div class="buttons">
+        <div class="buttons-row">
+          <button class="button-item" @click="editResult(7)">7</button>
+          <button class="button-item" @click="editResult(8)">8</button>
+          <button class="button-item" @click="editResult(9)">9</button>
+          <button class="button-item" @click="deleteNumber">DEL</button>
+        </div>
+        <div class="buttons-row">
+          <button class="button-item" @click="editResult(4)">4</button>
+          <button class="button-item" @click="editResult(5)">5</button>
+          <button class="button-item" @click="editResult(6)">6</button>
+          <button class="button-item" @click="getOperation(0)" :disabled="disabledOp">+</button>
+        </div>
+        <div class="buttons-row">
+          <button class="button-item" @click="editResult(1)">1</button>
+          <button class="button-item" @click="editResult(2)">2</button>
+          <button class="button-item" @click="editResult(3)">3</button>
+          <button class="button-item" @click="getOperation(1)" :disabled="disabledOp">-</button>
+        </div>
+        <div class="buttons-row">
+          <button class="button-item" @click="editResult(11)" :disabled="disabled">.</button>
+          <button class="button-item" @click="editResult(0)">0</button>
+          <button class="button-item" @click="getOperation(2)" :disabled="disabledOp">/</button>
+          <button class="button-item" @click="getOperation(3)" :disabled="disabledOp">x</button>
+        </div>
+        <div class="buttons-row">
+          <button class="button-item" @click="resetNumber">RESET</button>
+          <button class="button-item" @click="getFinalResult" :disabled="disabledEq">=</button>
+        </div>
+      </div>
+    </div>
+  </div>
+    
+  <script src="https://unpkg.com/vue@next"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
