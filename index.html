@@ -8,13 +8,14 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Spartan:wght@700&display=swap" rel="stylesheet"> 
-  <title>Luigi Paglionico | Calcolatrice </title>
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  <title>Luigi Paglionico | Calculator </title>
 </head>
 <body>
   <div id="app" v-cloak>
     <div class="calcolatrice">
       <div class="intro-row">
-        <p>Calcolatrice</p>
+        <p>Calculator</p>
       </div>
       <div class="result-row" v-if="showResult">
         {{ result }}

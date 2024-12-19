@@ -16,7 +16,7 @@ const app = Vue.createApp({
             operation: null,
             disabled: false,
             disabledOp: false,
-            disabledEq: false,
+            disabledEq: true,
             showResult: true,
             showFinal: false
         }
@@ -28,6 +28,9 @@ const app = Vue.createApp({
             } else {
                 this.result += num;
             }  
+            if (this.number1) {
+                this.disabledEq = false;
+            }
         },
         deleteNumber() {
             this.result = this.result.slice(0, -1);
@@ -38,7 +41,7 @@ const app = Vue.createApp({
             this.showResult = true;
             this.disabledOp = false;
             this.disabled = false;
-            this.disabledEq = false;
+            this.disabledEq = true;
             this.finalResult = '';
             this.number1 = null;
             this.number2 = null;
